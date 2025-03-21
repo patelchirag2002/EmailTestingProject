@@ -26,8 +26,8 @@ namespace EmailTestingAPI.Controllers
         }
         #endregion
 
-        [HttpGet("send/{emailId}")]
-        public async Task<bool> SendEmail(string emailId)
+        [HttpGet("send")]
+        public async Task<bool> SendEmail()
         {
             EmailSetting setting = new EmailSetting
             {
@@ -56,7 +56,7 @@ namespace EmailTestingAPI.Controllers
                 emailBody = reader.ReadToEnd();
             }
 
-            isSuccess = await Task.Run(() => SendMailMessage(emailId, null, null, "Testing Email", emailBody, setting, null));
+            isSuccess = await Task.Run(() => SendMailMessage("kinnari.p@shaligraminfotech.com", null, null, "Testing Email", emailBody, setting, null));
             if (isSuccess)
             {
                 return true;
