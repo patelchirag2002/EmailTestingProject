@@ -56,7 +56,7 @@ namespace EmailTestingAPI.Controllers
                 emailBody = reader.ReadToEnd();
             }
 
-            isSuccess = await Task.Run(() => SendMailMessage("kinnari.p@shaligraminfotech.com", null, null, "Testing Email", emailBody, setting, null));
+            isSuccess = await Task.Run(() => SendMailMessage("kinnari.p@shaligraminfotech.com,kinnari.p2494@gmail.com", null, null, "Testing Email", emailBody, setting, null));
             if (isSuccess)
             {
                 return true;
